@@ -27,6 +27,9 @@ sudo systemctl status bluetooth
 sudo systemctl restart bluetooth
 ```
 
+- Check for your printer `hcitool scan`
+- Test connect `sudo rfcomm connect 0 53:48:0D:83:AA:69`
+
 - Add your user to cups `sudo usermod -a -G lpadmin submarines`
 - Configure cups for network access `sudo nano /etc/cups/cupsd.conf`
 ```conf
@@ -34,6 +37,9 @@ sudo systemctl restart bluetooth
     # Change "Listen localhost:631" to "Port 631"
     Listen localhost:631
     Port 631
+
+    # Add retry interval (optional, default is 30)
+    JobRetryInterval 10
 
     # Add  Allow @local to the following sections
     <Location />
@@ -54,7 +60,7 @@ sudo systemctl restart bluetooth
     </Location>
 ``` 
 
-- Restart cups `sudo /etc/init.d/cups restart
+- Restart cups `sudo /etc/init.d/cups restart`
 
 - Auto connect cups to network after reboot `sudo nano /etc/network/if-up.d/cups`
 ```shell
@@ -73,7 +79,7 @@ sudo make install
 
 - Install driver
 ```shell
-sudo lpadmin -p M02 -E -v phomemo://53480D83AA69  -P /usr/share/cups/model/Phomemo/Phomemo-M02Pro.ppd.gz
+sudo lpadmin -p M02 -E -v phomemo://53480D83AA69  -P /usr/share/cups/model/Phomemo/Phomemo-M02Pro.ppd.gz -o printer-error-policy=retry-job
 ```
 
 If all went well, the printer should now appear on all your apple devices. If you change the `cups/backend/phomemo.py` file to suit your setup, re-running make+sudo make install is enough to run your new code. For cups error logs: `tail /var/log/cups/error_log -f` - they are not the best.
