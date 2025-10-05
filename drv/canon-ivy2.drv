@@ -1,0 +1,31 @@
+//
+// Driver file for Canon ivy2
+//
+// https://www.cups.org/doc/ref-ppdcfile.html
+//
+
+#include <font.defs>
+#include <media.defs>
+
+#media "w51h76" 51mm 76mm
+{
+  Manufacturer "Canon"
+  ModelName "Ivy 2"
+  PCFileName "canon-ivy2.ppd"
+  Version 1.0
+  Attribute "NickName" "" "Canon Ivy 2"
+  ColorDevice Yes
+  Attribute "cupsSNMPSupplies" "" "false"
+  DriverType p
+  
+  Filter "application/vnd.cups-raster 100 rastertopm02"
+  *Resolution - 8 0 0 0 313x512dpi
+  ColorModel RGB/Color rgb chunky 0
+
+  *MediaSize "w51h76"
+
+  VariablePaperSize No
+  HWMargins 0 0 0 0
+  MinSize 0.00 0.00
+  MaxSize 0.00 0.00
+}
