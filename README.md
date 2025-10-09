@@ -70,16 +70,16 @@ sudo systemctl restart cups.service
 - Make executable `sudo chmod +x /etc/network/if-up.d/cups`
 
 ### Cups driver
-- Build cups driver
+- Build cups drivers
 ```shell
-cd cups
 make
 sudo make install
 ```
 
-- Install driver
+- Install drivers
 ```shell
-sudo lpadmin -p M02 -E -v phomemo://53480D83AA69  -P /usr/share/cups/model/Phomemo/Phomemo-M02Pro.ppd.gz -o printer-error-policy=retry-job
+sudo lpadmin -p M02 -E -v phomemo://53480D83AA69  -P /usr/share/cups/model/phomemo/phomemo-m02pro.ppd.gz -o printer-error-policy=retry-job
+sudo lpadmin -p Ivy -E -v canon://XXX  -P /usr/share/cups/model/canon/canon-ivy2.ppd.gz -o printer-error-policy=retry-job
 ```
 
 If all went well, the printer should now appear on all your apple devices. If you change the `cups/backend/phomemo.py` file to suit your setup, re-running make+sudo make install is enough to run your new code. For cups error logs: `tail /var/log/cups/error_log -f` - they are not the best.

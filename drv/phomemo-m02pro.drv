@@ -29,7 +29,7 @@
 {
   Manufacturer "Phomemo"
   ModelName "M02 Pro"
-  PCFileName "Phomemo-M02Pro.ppd"
+  PCFileName "phomemo-m02pro.ppd"
   Version 1.0
   Attribute "NickName" "" "Phomemo M02 Pro"
   DriverType label
