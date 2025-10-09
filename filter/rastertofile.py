@@ -66,10 +66,39 @@ pages = read_ras3(sys.stdin.buffer.read())
 for i, datatuple in enumerate(pages):
     (header, imgdata) = datatuple
 
-    image = Image.frombuffer(mode='RGB', data=imgdata, size=(header.cupsWidth, header.cupsHeight))
+    auto_crop=True
+    PRINT_START_WIDTH = 1280
+    PRINT_START_HEIGHT = 1920
+
+    PRINT_FINAL_WIDTH = 640
+    PRINT_FINAL_HEIGHT = 1616
 
     try:
-        image.save("/tmp/a.jpg", format="JPEG", quality=100)
+        image = Image.frombuffer(mode='RGB', data=imgdata, size=(header.cupsWidth, header.cupsHeight))
+
+        width, height = image.size
+
+        if auto_crop:
+            scale_factor = max(PRINT_START_WIDTH / width, PRINT_START_HEIGHT / height)
+        else:
+            scale_factor = min(PRINT_START_WIDTH / width, PRINT_START_HEIGHT / height)
+
+        scaled_width = int(width * scale_factor)
+        scaled_height = int(height * scale_factor)
+
+        if scaled_width != width or scaled_height != height:
+            image = image.resize((scaled_width, scaled_height), Image.Resampling.LANCZOS)
+
+        offset = (
+            (PRINT_START_WIDTH - scaled_width) // 2,
+            (PRINT_START_HEIGHT - scaled_height) // 2
+        )
+
+        out_image = Image.new("RGB", (PRINT_START_WIDTH, PRINT_START_HEIGHT))
+        out_image.paste(image, offset)
+
+
+        out_image.save("/tmp/a.jpg", format="JPEG", quality=100)
 
     except OSError as ex:
         print("ERROR: System: " + str(ex), file=sys.stderr)

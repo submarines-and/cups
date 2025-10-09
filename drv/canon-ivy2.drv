@@ -19,7 +19,7 @@
   DriverType ps
   
   Filter "application/vnd.cups-raster 100 rastertofile"
-  *Resolution - 8 0 0 0 313x512dpi
+  *Resolution - 8 0 0 0 512dpi
   ColorModel RGB/Color rgb chunky 0
 
   *MediaSize "w51h76"
