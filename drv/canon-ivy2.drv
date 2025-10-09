@@ -18,7 +18,7 @@
   Attribute "cupsSNMPSupplies" "" "false"
   DriverType ps
   
-  Filter "application/vnd.cups-raster 100 rastertopm02"
+  Filter "application/vnd.cups-raster 100 rastertofile"
   *Resolution - 8 0 0 0 313x512dpi
   ColorModel RGB/Color rgb chunky 0
 
