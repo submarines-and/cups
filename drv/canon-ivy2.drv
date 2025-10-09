@@ -16,7 +16,7 @@
   Attribute "NickName" "" "Canon Ivy 2"
   ColorDevice Yes
   Attribute "cupsSNMPSupplies" "" "false"
-  DriverType p
+  DriverType ps
   
   Filter "application/vnd.cups-raster 100 rastertopm02"
   *Resolution - 8 0 0 0 313x512dpi
