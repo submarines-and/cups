@@ -1,7 +1,13 @@
 //
 // Driver info file for Phomemo M02
 //
-// Copyright © 2020 Laurent Vivier <laurent@vivier.eu>
+// https://www.cups.org/doc/ref-ppdcfile.html
+//
+// Paper heights and purpose:
+// 50 Square
+// 65 Iphone portrait photo
+// 70 A6 postcard
+// 100 Text (Rotated 90deg)
 //
 
 #include <font.defs>
@@ -9,10 +15,9 @@
 #include <label.h>
 
 #media "w50h50/Label 50mmx50mm" 50mm 50mm
-#media "w50h75/Label 50mmx75mm" 50mm 75mm
+#media "w50h65/Label 50mmx65mm" 50mm 65mm
+#media "w50h70/Label 50mmx70mm" 50mm 70mm
 #media "w50h100/Label 50mmx100mm" 50mm 100mm
-#media "w50h125/Label 50mmx125mm" 50mm 125mm
-#media "w50h150/Label 50mmx150mm" 50mm 150mm
 {
   Manufacturer "Phomemo"
   ModelName "M02 Pro"
@@ -29,10 +34,9 @@
   ColorModel Gray/Grayscale w chunky 0
 
   MediaSize "w50h50"
-  MediaSize "w50h75"
+  MediaSize "w50h65"
+  MediaSize "w50h70"
   MediaSize "w50h100"
-  MediaSize "w50h125"
-  MediaSize "w50h150"
 
   VariablePaperSize No
   MinSize 0.00 0.00

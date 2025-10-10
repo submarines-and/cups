@@ -2,6 +2,8 @@
 // Driver file for Canon ivy2
 //
 // https://www.cups.org/doc/ref-ppdcfile.html
+// 
+// Only one paper size is supported.
 //
 
 #include <font.defs>
