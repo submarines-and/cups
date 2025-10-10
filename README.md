@@ -1,13 +1,15 @@
 # Phomemo Cups Driver
-Cups driver for Phomemo M02 Pro. Based on the works of other, but tweaked and cleaned up for my setup.
+Cups driver for Phomemo M02 Pro and Canon Zoemini 2 (Ivy 2). Based on the works of other, but tweaked and cleaned up for my setup, which is a raspberry pi zero. See full instructions below.
 
 ## Sources
-- [Phomemo scripts](https://github.com/vivier/phomemo-tools/blob/master/tools/phomemo-filter.py)
+- [Phomemo script](https://github.com/vivier/phomemo-tools/blob/master/tools/phomemo-filter.py)
+- [Ivy script](https://github.com/dtgreene/ivy2/blob/main/image.py)
 - [Install cups](https://roundhere.net/field-notes/2025/05/raspberry-pi-print-server/)
 
 ## Instructions
 
 ### Raspberry pi and cups server
+- Get a good power supply for your raspberry pi. If your image starts out printing fast but then slows down, you do not have enough power.
 - Download [the Raspberry Pi Imager tool](https://www.raspberrypi.com/software/).
 - Use it to create a disk image for your pi. I used rpi lite 64bit with no desktop (available on page 2).
 - Install dependencies
