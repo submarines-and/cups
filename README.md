@@ -3,7 +3,6 @@ Cups driver for Phomemo M02 Pro. Based on the works of other, but tweaked and cl
 
 ## Sources
 - [Phomemo script](https://github.com/vivier/phomemo-tools/blob/master/tools/phomemo-filter.py)
-- [Ivy script](https://github.com/dtgreene/ivy2/blob/main/image.py)
 - [Install cups](https://roundhere.net/field-notes/2025/05/raspberry-pi-print-server/)
 
 ## Instructions
