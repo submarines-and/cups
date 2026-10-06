@@ -15,7 +15,7 @@
 #include <label.h>
 
 #media "w50h50/Label 50mmx50mm" 50mm 50mm
-#media "w50h65/Label 50mmx65mm" 50mm 65mm
+#media "w50h70/Label 50mmx70mm" 50mm 70mm
 {
   Manufacturer "Phomemo"
   ModelName "M02 Pro"
@@ -32,7 +32,7 @@
   ColorModel Gray/Grayscale w chunky 0
 
   MediaSize "w50h50"
-  MediaSize "w50h65"
+  MediaSize "w50h70"
 
   VariablePaperSize No
   MinSize 0.00 0.00
